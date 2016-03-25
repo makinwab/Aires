@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aires</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'main', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <style>
+      body {
+        width: 80%;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <%= render "shared/navbar" %>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
