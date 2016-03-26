@@ -1,7 +1,8 @@
 <h2 class="ui centered header">Change your password</h2>
 
+<%= render "shared/devisemes" %>
+
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: "ui form" }) do |f| %>
-  <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
 
   <div class="field">

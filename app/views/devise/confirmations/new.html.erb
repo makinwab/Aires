@@ -1,7 +1,8 @@
 <h2 class="ui centered header">Resend confirmation instructions</h2>
 
+<%= render "shared/devisemes" %>
+
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: "ui form" }) do |f| %>
-  <%= devise_error_messages! %>
 
   <div class="field">
     <%= f.label :email %><br />

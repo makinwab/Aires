@@ -1,0 +1,13 @@
+<% unless resource.errors.empty? %>
+  <div class="ui error message">
+    <i class="close icon"></i>    
+    <div class="header">
+      <ul class="list">
+      There was some errors with your submission
+    </div>
+    <% resource.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+    <% end %>
+    </ul>
+</div>
+<% end %>

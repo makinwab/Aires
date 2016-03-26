@@ -9,13 +9,13 @@
   </head>
   <body>
     <%= render "shared/navbar" %>
+    
 
     <div class="ui grid container">
       <div class="four wide column"></div>
 
       <div class="eight wide column">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <%= render "shared/message" %>
         <%= yield %>
       </div>
       

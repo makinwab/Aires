@@ -1,6 +1,10 @@
 <h2 class="ui centered header">Log In</h2>
 
+<%= render "shared/devisemes" %>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "ui form" }) do |f| %>
+
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>

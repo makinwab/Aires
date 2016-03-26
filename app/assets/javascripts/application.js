@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require semantic-ui
+//= requite toastr
 //= require turbolinks
 //= require_tree .
-//= require semantic-ui
