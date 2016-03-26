@@ -10,7 +10,8 @@
     <%= link_to "Sign up", new_user_registration_path, class: "item" %>
   <% else %>
     <div class="ui dropdown item">
-      Welcome, <%= current_user.fullname %>!
+      <%= image_tag avatar_url(current_user), class: "ui avatar image" %>
+      <%= current_user.fullname %>
       <i class="dropdown icon"></i>
       <div class="menu">
         <a class="item"><i class="plane icon"></i> Your Trips</a>

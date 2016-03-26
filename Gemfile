@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'devise'
+gem 'toastr-rails'
 group :development, :test do
   gem 'byebug'
 end
@@ -19,4 +20,3 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-
