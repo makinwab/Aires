@@ -42,8 +42,8 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: "smtp.madrillapp.com",
-    port: 875,
+    address: "smtp.mandrillapp.com",
+    port: 587,
     enable_starttls_auto: true,
     user_name: "makinwa37",
     password: "GM5zcX-RlPI6kHYaFTYCnQ",
