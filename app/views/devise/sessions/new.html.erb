@@ -1,32 +1,38 @@
-<h2 class="ui centered header">Log In</h2>
+<div class="four wide column"></div>
 
-<%= render "shared/devisemes" %>
+<div class="eight wide column">
+  <h2 class="ui centered header">Log In</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "ui form" }) do |f| %>
+  <%= render "shared/devisemes" %>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "ui form" }) do |f| %>
 
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="ui checkbox field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
     </div>
-  <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in", class: "ui blue button" %>
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+
+    <% if devise_mapping.rememberable? -%>
+      <div class="ui checkbox field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end -%>
+
+    <div class="actions">
+      <%= f.submit "Log in", class: "ui blue button" %>
+    </div>
+  <% end %>
+
+  <div class="ui list">
+    <%= render "devise/shared/links" %>
   </div>
-<% end %>
-
-<div class="ui list">
-  <%= render "devise/shared/links" %>
 </div>
+
+<div class="four wide column"></div>

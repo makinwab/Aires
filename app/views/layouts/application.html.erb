@@ -10,16 +10,11 @@
   <body>
     <%= render "shared/navbar" %>
     
-
-    <div class="ui grid container">
-      <div class="four wide column"></div>
-
-      <div class="eight wide column">
-        <%= render "shared/message" %>
-        <%= yield %>
-      </div>
-      
-      <div class="four wide column"></div>
+    <div class="ui main grid container">
+      <%= render "shared/message" %>
+      <%= yield %>
     </div>
+
+    <%#= render "shared/footer" %>
   </body>
 </html>

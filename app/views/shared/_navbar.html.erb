@@ -1,31 +1,33 @@
-<div class="ui menu navbar">
-  <a href="/" class="brand item">Aires</a>
-  <a class="item active">Editorials</a>
-  <a class="item">Reviews</a>
-  <a class="item">Upcoming Events</a>
-  <div class="right menu">
-  </div>
-  <% if !user_signed_in? %>
-    <%= link_to "Log in", new_user_session_path, class: "item" %>
-    <%= link_to "Sign up", new_user_registration_path, class: "item" %>
-  <% else %>
-    <div class="ui dropdown item">
-      <%= image_tag avatar_url(current_user), class: "ui avatar image" %>
-      <%= current_user.fullname %>
-      <i class="dropdown icon"></i>
-      <div class="menu">
-        <a class="item"><i class="plane icon"></i> Your Trips</a>
-        <a class="item"><i class="pin icon"></i> Wish Lists</a>
-        <%= link_to edit_user_registration_path, class: "item" do %>
-          <i class="edit icon"></i> 
-          Edit Profile
-        <% end %>
-        <a class="item"><i class="settings icon"></i> Account Settings</a>
-        <%= link_to destroy_user_session_path, method: :delete, class: "item" do %>
-          <i class="sign out icon"></i> 
-          Log out
-        <% end %>
-      </div>
+<div class="ui inverted menu">
+  <div class="ui container">
+    <a href="/" class="header item">
+      <%= image_tag "logo.png", class: "logo"%>
+      &nbsp; &nbsp; Aires
+    </a>
+    <div class="right menu">
     </div>
-  <% end %>
+    <% if !user_signed_in? %>
+      <%= link_to "Log in", new_user_session_path, class: "item" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "item" %>
+    <% else %>
+      <div class="ui dropdown item">
+        <%= image_tag avatar_url(current_user), class: "ui avatar image" %>
+        <%= current_user.fullname %>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item"><i class="plane icon"></i> Your Trips</a>
+          <a class="item"><i class="pin icon"></i> Wish Lists</a>
+          <%= link_to edit_user_registration_path, class: "item" do %>
+            <i class="edit icon"></i> 
+            Edit Profile
+          <% end %>
+          <a class="item"><i class="settings icon"></i> Account Settings</a>
+          <%= link_to destroy_user_session_path, method: :delete, class: "item" do %>
+            <i class="sign out icon"></i> 
+            Log out
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

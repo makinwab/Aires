@@ -1,2 +1,10 @@
 @import "semantic-ui";
-@import "toastr"
+@import "toastr";
+
+.ui.inverted.menu {
+  border-radius: 0px;
+}
+
+.delete-account {
+  margin: auto auto;
+}
