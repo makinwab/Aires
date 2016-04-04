@@ -8,13 +8,7 @@
       </div>
       <div class="content">
         <div class="header"><%= @user.fullname %></div>
-        <div class="meta">
-          <a>Friends</a>
-        </div>
-        <div class="description">
-          <%= @user.description %>
-          Matthew is an interior designer living in New York.
-        </div>
+        <div class="meta"><%= @user.email %></div>
       </div>
       <div class="extra content">
         <span class="right floated">
@@ -32,6 +26,7 @@
 <div class="eight wide column">
   <div class="ui main text container">
     <h2 class="ui header"><%= @user.fullname %></h2>
+    <p><%= @user.description %></p>
   </div>
 </div>
 
