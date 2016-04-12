@@ -4,16 +4,28 @@
       <%= image_tag "logo.png", class: "logo"%>
       &nbsp; &nbsp; AIRES
     </a>
-    <div class="right menu">
-    </div>
     <% if !user_signed_in? %>
       <%= link_to "Log in", new_user_session_path, class: "item" %>
       <%= link_to "Sign up", new_user_registration_path, class: "item" %>
     <% else %>
+
+      <div class="right menu">
+        <a class="item">
+          <i class="mail outline icon"></i>
+          Message
+        </a>
+
+        <a class="item">
+          <i class="home icon"></i>
+          Become a Host
+        </a> 
+      </div>
+
       <div class="ui dropdown item">
         <%= image_tag avatar_url(current_user), class: "ui avatar image" %>
         <%= current_user.fullname %>
         <i class="dropdown icon"></i>
+
         <div class="menu">
           <a class="item"><i class="plane icon"></i> Your Trips</a>
           <a class="item"><i class="pin icon"></i> Wish Lists</a>
@@ -27,6 +39,7 @@
             Log out
           <% end %>
         </div>
+        
       </div>
     <% end %>
   </div>
