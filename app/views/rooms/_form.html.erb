@@ -1,0 +1,141 @@
+<div class="two wide column"></div>
+
+<div class="twelve wide column">
+  <h1 class="ui header centered">Create your beautiful place</h1>
+
+  <div class="ui segment">
+    <%= form_for @room, html: { class: "ui form" } do |f| %>
+      <div class="two fields">
+        <div class="field">
+          <label>Home Type</label>
+          <%= f.select :home_type,
+                [["Apartment", "Apartment"], ["House", "House"], ["Bed & Breakfast", "Bed & Breakfast"]],
+                { id: "home_type", prompt: "Select..."},
+                { class: "ui fluid dropdown"}  
+          %>
+        </div>
+
+        <div class="field">
+          <label>Room Type</label>
+          <%= f.select :room_type,
+                [["Entire", "Entire"], ["Private", "Private"], ["Shared", "Shared"]],
+                { id: "home_type", prompt: "Select..."},
+                { class: "ui fluid dropdown"}
+          %>
+        </div>
+
+        <div class="field">
+          <label>Accommodate</label>
+          <%= f.select :accommodate,
+                [["1", 1], ["2", 2], ["3",3], ["4", 4], ["5", 5], ["6+", 6]],
+                { id: "home_type", prompt: "Select..."},
+                { class: "ui fluid dropdown"}
+          %>
+        </div>
+      </div>
+
+      <div class="two fields">
+        <div class="field">
+          <label>Bedroom</label>
+          <%= f.select :bed_room,
+            [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
+            { prompt: "Select..."},
+            { class: "ui fluid dropdown"}
+          %>
+        </div>
+
+        <div class="field">
+          <label>Bathrooms</label>
+          <%= f.select :bath_room,
+            [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
+            { prompt: "Select..."},
+            { class: "ui fluid dropdown"}
+          %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field">
+          <label>Listing name</label>
+          <%= f.text_field :listing_name, placeholder: "Be clear and descriptive", class: "ui input" %>
+        </div>
+      </div>
+      
+      <div class="field">
+        <div class="field">
+          <label>Summary</label>
+          <%= f.text_area :summary, rows: 5, placeholder: "Tell us about your house", class: "ui input" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field">
+          <label>Address</label>
+          <%= f.text_field :address, placeholder: "What is your address?", class: "ui input" %>
+        </div>
+      </div>
+
+      <div class="two fields">
+        <div class="field">
+          <div class="inline field">
+            <div class="ui checkbox">
+              <%= f.check_box :is_tv, class: "hidden", tabindex: "0"%>
+              <label>TV</label>
+            </div>
+          </div>
+
+          <div class="inline field">
+            <div class="ui checkbox">
+              <%= f.check_box :is_kitchen, class: "hidden", tabindex: "0"%>
+              <label>Kitchen</label>
+            </div>
+          </div>
+
+          <div class="inline field">
+            <div class="ui checkbox">
+              <%= f.check_box :is_internet, class: "hidden", tabindex: "0"%>
+              <label>Internet</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="inline field">
+            <div class="ui checkbox">
+              <%= f.check_box :is_heating, class: "hidden", tabindex: "0"%>
+              <label>Heating</label>
+            </div>
+          </div>
+
+          <div class="inline field">
+            <div class="ui checkbox">
+              <%= f.check_box :is_air, class: "hidden", tabindex: "0"%>
+              <label>Air Conditioning</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="two fields">
+        <div class="field">
+          <label>Nightly Price</label>
+          <div class="ui left icon input">
+            <%= f.text_field :price, placeholder: "e.g. $100" %>
+            <i class="dollar icon"></i>
+          </div>
+        </div>
+
+        <div class="inline field">
+          <div class="ui checkbox">
+            <%= f.check_box :active, class: "hidden", tabindex: "0"%>
+            <label>Active</label>
+          </div>
+        </div>
+      </div>
+
+      <%= f.submit "Save", class: "ui primary button" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="two wide column"></div>

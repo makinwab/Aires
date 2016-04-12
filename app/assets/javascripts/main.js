@@ -9,4 +9,6 @@ $(document).on('ready page:load', function(){
   $('.message .close').on('click', function() {
     $(this).closest('.message').fadeOut('3000');
   });
+
+  $('.ui.checkbox').checkbox();
 });
