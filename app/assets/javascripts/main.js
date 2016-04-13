@@ -15,11 +15,25 @@ $(document).on('ready page:load', function(){
     $(this).closest('.message').fadeOut('3000');
   });
 
-  $('.photos.right.remove').unbind('click').on('click', function() {
-    alert("closed...");
-    //$(this).closest('.message').fadeOut('3000');
-  });
-
   $('.ui.checkbox').checkbox();
+
+  $('.run').on('click', function(e){
+    e.preventDefault();
+    $('.small.modal').modal('show');
+  });
+  
+  $('.ui.form')
+    .form({
+      fields: {
+        name     : 'empty',
+        gender   : 'empty',
+        username : 'empty',
+        password : ['minLength[6]', 'empty'],
+        skills   : ['minCount[2]', 'empty'],
+        terms    : 'checked',
+        listing  : 'empty'
+      }
+    })
+  ;
 });
 

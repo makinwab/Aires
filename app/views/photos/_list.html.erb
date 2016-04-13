@@ -5,9 +5,29 @@
         <div class="ui small images">
           <%= image_tag photo.image.url %>
         </div>
+        <%=link_to photo, remote: true, method: :delete, data: { confirm: "Are you sure?" } do %>
         <i class="photos right remove large circle icon"></i>
+        <% end %>
       </div>
     <% end %>
     
+  </div>
+
+  <div class="ui small test modal transition">
+    <div class="header">
+      Delete Your Account
+    </div>
+    <div class="content">
+      <p>Are you sure you want to delete this picture</p>
+    </div>
+    <div class="actions">
+      <div class="ui negative button">
+        No
+      </div>
+      <div class="ui positive right labeled icon button">
+        Yes
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
   </div>
 <% end %>
