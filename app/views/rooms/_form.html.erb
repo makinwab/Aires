@@ -4,7 +4,7 @@
   <h1 class="ui header centered">Create your beautiful place</h1>
 
   <div class="ui segment">
-    <%= form_for @room, html: { class: "ui form" } do |f| %>
+    <%= form_for @room, html: { class: "ui form", multipart: true } do |f| %>
       <div class="two fields">
         <div class="field">
           <label>Home Type</label>
@@ -119,10 +119,11 @@
       <div class="two fields">
         <div class="field">
           <label>Nightly Price</label>
-          <div class="ui left icon input">
-            <%= f.text_field :price, placeholder: "e.g. $100" %>
-            <i class="dollar icon"></i>
-          </div>
+           <div class="ui right labeled input">
+              <div class="ui label">$</div>
+                <%= f.text_field :price, placeholder: "e.g. $100" %>
+              <div class="ui basic label">.00</div>
+            </div>
         </div>
 
         <div class="inline field">
@@ -132,6 +133,16 @@
           </div>
         </div>
       </div>
+
+      <div class="field">
+        <div class="ui icon button" id="divUpload">
+          <i class="cloud icon"></i>
+          Upload Photos
+       </div>
+       <%= file_field_tag "images[]", type: :file, multiple: true, style:"display:none", id:"hidden-new-file" %>
+      </div>
+
+      <div id="photos"><%= render "photos/list" %></div>
 
       <%= f.submit "Save", class: "ui primary button" %>
     <% end %>

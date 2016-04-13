@@ -4,3 +4,19 @@
 .ui.form.room {
   margin-top: 2rem;
 }
+.room-img {
+  border: 1px solid rgba(34,36,38,.15);
+  border-radius: .28571429rem;
+  padding-bottom: 1em;
+  position: relative;
+  margin:1em;
+}
+
+.room-img img {
+  height: 10em !important;
+}
+
+.photos.right.remove {
+  cursor: pointer;
+  float:right;
+}

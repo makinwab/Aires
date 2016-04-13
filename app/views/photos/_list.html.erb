@@ -1,0 +1,13 @@
+<% if @photos %>
+  <div class="two fields">
+    <% @photos.each do |photo| %>
+      <div class="room-img">
+        <div class="ui small images">
+          <%= image_tag photo.image.url %>
+        </div>
+        <i class="photos right remove large circle icon"></i>
+      </div>
+    <% end %>
+    
+  </div>
+<% end %>
