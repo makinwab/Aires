@@ -4,11 +4,11 @@ $(document).on('ready page:load', function(){
     $('#hidden-new-file').click();
   });
 
-  $('.right.menu.open').on("click",function(e){
+  $('.ui.dropdown.item').on("click",function(e){
         e.preventDefault();
-    $('.ui.vertical.menu').toggle();
+        $('.ui.vertical.menu').toggle();
   });
-    
+
   $('.ui.dropdown').dropdown();
 
   $('.message .close').on('click', function() {
@@ -21,19 +21,10 @@ $(document).on('ready page:load', function(){
     e.preventDefault();
     $('.small.modal').modal('show');
   });
-  
-  $('.ui.form')
-    .form({
-      fields: {
-        name     : 'empty',
-        gender   : 'empty',
-        username : 'empty',
-        password : ['minLength[6]', 'empty'],
-        skills   : ['minCount[2]', 'empty'],
-        terms    : 'checked',
-        listing  : 'empty'
-      }
-    })
-  ;
-});
 
+  $('.room .item').click(function(e){
+    e.preventDefault();
+    $('.menu .item').removeClass('active');
+    $(this).addClass('active');
+  });
+});

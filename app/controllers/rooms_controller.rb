@@ -21,8 +21,8 @@ class RoomsController < ApplicationController
       save_image do
         @photos = @room.photos
       end
-      
-      redirect_to edit_room_path(@room), notice: "Saved..."
+
+      redirect_to edit_room_path(@room), notice: 'Saved...'
     else
       render :new
     end
@@ -39,44 +39,45 @@ class RoomsController < ApplicationController
   def update
     if @room.update(room_params)
       save_image
-      redirect_to edit_room_path(@room), notice: "Updated..."
+      redirect_to edit_room_path(@room), notice: 'Updated...'
     else
       render :edit
     end
   end
 
   private
-    def save_image
-      if images = params[:images]
-        images.each do |image|
-          @room.photos.create(image: image)
-        end
+
+  def save_image
+    if images = params[:images]
+      images.each do |image|
+        @room.photos.create(image: image)
       end
-
-      yield if block_given?
     end
 
-    def set_room
-      @room = Room.find(params[:id])
-    end
+    yield if block_given?
+  end
 
-    def room_params
-      params.require(:room).permit(
-                              :home_type,
-                              :room_type,
-                              :accommodate,
-                              :bed_room,
-                              :bath_room,
-                              :listing_name,
-                              :summary,
-                              :address,
-                              :is_tv,
-                              :is_kitchen,
-                              :is_air,
-                              :is_heating,
-                              :is_internet,
-                              :price,
-                              :active
-                            )
-    end
+  def set_room
+    @room = Room.find(params[:id])
+  end
+
+  def room_params
+    params.require(:room).permit(
+      :home_type,
+      :room_type,
+      :accommodate,
+      :bed_room,
+      :bath_room,
+      :listing_name,
+      :summary,
+      :address,
+      :is_tv,
+      :is_kitchen,
+      :is_air,
+      :is_heating,
+      :is_internet,
+      :price,
+      :active
+    )
+  end
 end

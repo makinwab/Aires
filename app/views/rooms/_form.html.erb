@@ -1,5 +1,3 @@
-<div class="two wide column"></div>
-
 <div class="twelve wide column">
   <h1 class="ui header centered">Create your beautiful place</h1>
 
@@ -11,7 +9,7 @@
           <%= f.select :home_type,
                 [["Apartment", "Apartment"], ["House", "House"], ["Bed & Breakfast", "Bed & Breakfast"]],
                 { id: "home_type", prompt: "Select..."},
-                { class: "ui fluid dropdown"}  
+                { class: "ui fluid dropdown"}
           %>
         </div>
 
@@ -60,7 +58,7 @@
           <%= f.text_field :listing_name, placeholder: "Be clear and descriptive", class: "ui input" %>
         </div>
       </div>
-      
+
       <div class="field">
         <div class="field">
           <label>Summary</label>
@@ -148,5 +146,3 @@
     <% end %>
   </div>
 </div>
-
-<div class="two wide column"></div>
