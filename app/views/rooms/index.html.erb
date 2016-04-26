@@ -17,10 +17,12 @@
           <div class="four wide column listing">
               <%= image_tag room.photos[0].image.url(:thumb) if room.photos.length > 0 %>
           </div>
+          
           <div class="eight wide column">
-              <h4><%= room.listing_name %></h4>
+              <h4><%= link_to room.listing_name, room_path(room) %></h4>
               <p><%= room.summary %></p>
           </div>
+
           <div class="four wide column">
               <%= link_to "Update", edit_room_path(room), class: "ui button blue" %>
           </div>

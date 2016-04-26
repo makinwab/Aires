@@ -1,2 +1,68 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
+<div class="two wide column"></div>
+
+<div class="twelve wide column ui segment">
+  <div class="row">
+    <div class="column room-full-img">
+      <%= image_tag @photos[0].image.url, class:"ui fluid image" if @photos.length > 0 %>
+      <br><br>
+      <div class="ui grid">
+        <div class="four wide column">
+          <%= image_tag avatar_url(@room.user), class: "ui centered tiny circular image" %>
+          <h4 class="ui header centered"><%= @room.user.fullname %></h4>
+        </div>
+
+        <div class="twelve wide column">
+          <div class="row">
+            <h2 class="ui header"><%= @room.listing_name %></h4>
+            <%= @room.address %>
+          </div>
+          <br><br>
+          <div class="ui grid">
+            <div class="four wide column">
+              <h4>
+                <i class="large home icon"></i>
+                <div class="content">
+                  <%= @room.home_type %>
+                </div>
+              </h4>
+            </div>
+
+            <div class="four wide column">
+              <h4>
+                <i class="large users icon"></i>
+                <div class="content">
+                  <%= @room.accommodate %> <%= @room.accommodate > 1 ? "Guests" : "Guest" %>
+                </div>
+              </h4>
+            </div>
+
+            <div class="four wide column">
+              <h4>
+                <i class="large hotel icon"></i>
+                <div class="content">
+                  <%= @room.bed_room %> <%= @room.bed_room > 1 ? "Bedrooms" : "Bedroom" %>
+                </div>
+              </h4>
+            </div>
+
+            <div class="four wide column">
+              <h4>
+                <i class="large bar icon"></i>
+                <div class="content">
+                  <%= @room.bath_room %> <%= @room.bath_room > 1 ? "Bathrooms" : "Bathroom" %>
+                </div>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <h1>About This Listing</h1>
+    <p><%= @room.summary %></p>
+  </div>
+</div>
+
+<div class="two wide column"></div>
